@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+
+.space{
+    margin: auto;
+    margin-top: 20px;
+}
+.center{
+    text-align: center;
+}
+
+.space h1{
+    font-size: 60px;
+    font-family: 'Yellowtail', cursive;
+    color: green;
+}

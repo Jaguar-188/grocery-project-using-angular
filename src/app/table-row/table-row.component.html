@@ -1,0 +1,23 @@
+<table class="table">
+    <tr *ngFor = "let item of groceryItems">
+        <td><h4>{{ item.grocery }}</h4></td>
+        <td><h4>{{ item.unit }}</h4></td>
+        <td><h4>{{ item.unitRate }}</h4></td>
+        <td><h4>{{ item.total }}</h4></td>
+        <td><button class="btn" id="editbtn">Edit</button></td>
+        <td><button class="btnd" (click) = "deleteItem(item.id)">Delete</button></td>
+    </tr> 
+</table>
+
+
+
+
+
+
+<!-- *ngFor = "let item of list" -->
+<!-- {{ item.grocery }}
+{{ item.unit }}
+{{ item.price }}
+{{ item.total }} -->
+<!-- (click) = "editItem($event,item.id)" -->
+<!-- (click) = "deleteItem(item.id)" -->
