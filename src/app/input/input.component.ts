@@ -15,12 +15,14 @@ export class InputComponent implements OnInit {
   }
   
   groceryItems = new Array;
+  updatedGroceryItems = new Array;
   grandTotal : number = 0;
   count : number = 0;
   obj : {}
 
   ngOnInit(): void {
     this.groceries.setData(this.groceryItems)
+    //this.updatedGroceryItems = this.groceries.getData()
   }
 
   addItem(groceryForm : NgForm){
@@ -41,6 +43,9 @@ export class InputComponent implements OnInit {
     {
         alert("Add Something")
     }
+    //console.log(this.groceryItems)
+    //console.log(this.updatedGroceryItems)
+
     groceryForm.resetForm()
     
   }

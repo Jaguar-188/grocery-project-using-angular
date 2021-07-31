@@ -5,16 +5,18 @@ import { Injectable } from '@angular/core';
 })
 export class GrandTotalService {
 
-  // grandTotal : number;
+  constructor() { }
 
-  // constructor() { }
+  grandTotal : number;
 
-  // setGrandTotal(data:number){
-  //   console.log(data)
-  //   this.grandTotal = data
-  // }
+  setGrandTotal(data){
+    //console.log("Service"+data)
+    this.grandTotal = data
+    //console.log("Service"+this.grandTotal)
+  }
 
-  // getGrandTotal(){
-  //   return this.grandTotal
-  // }
+  getGrandTotal(){
+    //console.log("in get"+this.grandTotal)
+    return this.grandTotal
+  }
 }

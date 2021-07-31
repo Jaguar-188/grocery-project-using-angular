@@ -1,3 +1,4 @@
+import { GrandTotalService } from './../services/grand-total.service';
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange } from '@angular/core';
 import { GroceryItemsService } from '../services/grocery-items.service';
 
@@ -10,12 +11,14 @@ export class TableRowComponent implements OnInit {
 
   @Input() grandTotal : number;
 
-  constructor(private groceries : GroceryItemsService) { }
+  constructor(private groceries : GroceryItemsService,private gTotal : GrandTotalService) { }
 
   groceryItems = new Array;
+  grTotal : number;
   
   ngOnInit(): void {
     this.groceryItems = this.groceries.getData()
+    
   }
 
   deleteItem(id:number){
@@ -32,7 +35,12 @@ export class TableRowComponent implements OnInit {
     {
         this.grandTotal += item.unit*item.unitRate
     }
-    //console.log(this.grandTotal)
+    console.log(this.grandTotal)
+    this.grTotal = this.grandTotal
+    //console.log("1"+this.grTotal)
+    //console.log(this.grTotal)
+    this.gTotal.setGrandTotal(this.grTotal)
+    
   }
 
 }
