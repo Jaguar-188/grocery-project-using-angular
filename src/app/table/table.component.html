@@ -8,6 +8,7 @@
         <th><h4>Edit</h4></th>
         <th><h4>Delete</h4></th>
       </tr>
+      <app-table-row *ngFor="let item of groceryItems" [item]="item" (delete) = "deleteItem($event)"></app-table-row>
   </table>
-  <app-table-row></app-table-row>
+  
 </div>

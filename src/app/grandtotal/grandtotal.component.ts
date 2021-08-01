@@ -1,6 +1,5 @@
-import { GroceryItemsService } from './../services/grocery-items.service';
-import { GrandTotalService } from './../services/grand-total.service';
 import { Component, OnInit, Input, OnChanges, SimpleChange } from '@angular/core';
+import { Grocery } from '../grocery';
 
 @Component({
   selector: 'app-grandtotal',
@@ -9,17 +8,35 @@ import { Component, OnInit, Input, OnChanges, SimpleChange } from '@angular/core
 })
 export class GrandtotalComponent implements OnInit {
 
-  @Input() grandTotal: number;
+  @Input() groceryItems: any = [];
 
-  constructor(private gTotal : GrandTotalService,private groceries : GroceryItemsService) { }
+  constructor() { 
+
+  }
 
   // grTotal : number ;
-  groceryItems = new Array;
+  //groceryItems = new Array;
+  grandTotal = 0;
 
   ngOnInit(): void {
     //this.grandTotalCalculate()
     //this.grTotal = this.gTotal.getGrandTotal()
     // console.log("in grandtotal"+this.grTotal)
+  }
+
+  GrandTotal(){
+    //console.log(this.grandTotal)
+    //this.groceryItems = this.groceries.getData()
+    // console.log("1")
+    // console.log(this.groceryItems)
+    this.grandTotal = 0
+    for(let item of this.groceryItems)
+    {
+        this.grandTotal += item.unit*item.unitRate
+    }
+    //console.log(this.grandTotal)
+
+    return this.grandTotal
   }
 
 

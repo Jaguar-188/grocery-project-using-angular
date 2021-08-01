@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
+import { Grocery } from '../grocery';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GroceryItemsService {
 
-  groceryItems = new Array;
+  groceryItems : any = [];
 
   constructor() { }
 
-  setData(data : any[]){
-    this.groceryItems = data
+  addData(data : Grocery){
+    this.groceryItems.push(data)
   }
 
-  getData() {
+  getData() :Grocery[]{
     return this.groceryItems
   }
 }

@@ -1,6 +1,4 @@
-import { GrandTotalService } from './../services/grand-total.service';
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange } from '@angular/core';
-import { GroceryItemsService } from '../services/grocery-items.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-table-row',
@@ -9,37 +7,43 @@ import { GroceryItemsService } from '../services/grocery-items.service';
 })
 export class TableRowComponent implements OnInit {
 
-  @Input() grandTotal : number;
+  @Input() item : any;
+  @Output() delete = new EventEmitter
 
-  constructor(private groceries : GroceryItemsService,private gTotal : GrandTotalService) { }
+  constructor() { 
 
-  groceryItems = new Array;
-  grTotal : number;
+  }
+
+  // groceryItems = new Array;
+  // grTotal : number;
   
   ngOnInit(): void {
-    this.groceryItems = this.groceries.getData()
+    //this.groceryItems = this.groceries.getData()
     
   }
 
-  deleteItem(id:number){
+  deleteItem(event,item:object){
+
+    this.delete.emit(item)
+
     //console.log(this.groceryItems)
-    const data = JSON.parse(localStorage.getItem(`${id}`))
-    if(data.id === id)
-    {
-        localStorage.removeItem(`${id}`)
-    }
-    this.groceryItems = this.groceryItems.filter(item => item.id !== id)
-    //console.log(this.groceryItems)
-    this.grandTotal = 0
-    for(let item of this.groceryItems)
-    {
-        this.grandTotal += item.unit*item.unitRate
-    }
-    console.log(this.grandTotal)
-    this.grTotal = this.grandTotal
-    //console.log("1"+this.grTotal)
-    //console.log(this.grTotal)
-    this.gTotal.setGrandTotal(this.grTotal)
+    // const data = JSON.parse(localStorage.getItem(`${id}`))
+    // if(data.id === id)
+    // {
+    //     localStorage.removeItem(`${id}`)
+    // }
+    // this.groceryItems = this.groceryItems.filter(item => item.id !== id)
+    // //console.log(this.groceryItems)
+    // this.grandTotal = 0
+    // for(let item of this.groceryItems)
+    // {
+    //     this.grandTotal += item.unit*item.unitRate
+    // }
+    // console.log(this.grandTotal)
+    // this.grTotal = this.grandTotal
+    // //console.log("1"+this.grTotal)
+    // //console.log(this.grTotal)
+    // this.gTotal.setGrandTotal(this.grTotal)
     
   }
 

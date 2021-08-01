@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Grocery } from './grocery';
 
 @Component({
   selector: 'app-root',
