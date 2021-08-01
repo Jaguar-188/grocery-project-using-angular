@@ -1,13 +1,13 @@
-<!-- <table class="table"> -->
-    <tr>
+<table class="table">
+    <tr class="row">
         <td><h4>{{ item.grocery }}</h4></td>
         <td><h4>{{ item.unit }}</h4></td>
         <td><h4>{{ item.unitRate }}</h4></td>
         <td><h4>{{ item.total }}</h4></td>
-        <!-- <td><button class="btn" id="editbtn">Edit</button></td> -->
-        <td><button class="btnd" (click) = "deleteItem($event.target,item)">Delete</button></td>
+        <td><button class="btn" (click) = "editItem($event,item)">Edit</button></td>
+        <td><button class="btnd" (click) = "deleteItem(item)">Delete</button></td>
     </tr> 
-<!-- </table> -->
+</table>
 
 
 

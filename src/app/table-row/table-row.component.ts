@@ -9,6 +9,7 @@ export class TableRowComponent implements OnInit {
 
   @Input() item : any;
   @Output() delete = new EventEmitter
+  @Output() edit = new EventEmitter
 
   constructor() { 
 
@@ -22,9 +23,9 @@ export class TableRowComponent implements OnInit {
     
   }
 
-  deleteItem(event,item:object){
+  deleteItem(obj:object){
 
-    this.delete.emit(item)
+    this.delete.emit(obj)
 
     //console.log(this.groceryItems)
     // const data = JSON.parse(localStorage.getItem(`${id}`))
@@ -45,6 +46,12 @@ export class TableRowComponent implements OnInit {
     // //console.log(this.grTotal)
     // this.gTotal.setGrandTotal(this.grTotal)
     
+  }
+
+  editItem(event:any,item:object){
+    let arr = [event,item]
+    this.edit.emit(arr)
+    //console.log(event.target.textContent)
   }
 
 }
