@@ -20,6 +20,11 @@ export class TableComponent implements OnInit {
     //this.groceryItems = this.groceryItems.filter(item => item.id !== item.id)
     var index = this.groceryItems.indexOf(item)
     this.groceryItems.splice(index,1)
+    const data = JSON.parse(localStorage.getItem(`${item.id}`))
+    if(data.id === item.id)
+    {
+        localStorage.removeItem(`${item.id}`)
+    }
   }
 
   editItem(arr){
@@ -34,7 +39,7 @@ export class TableComponent implements OnInit {
           arr[0].target.parentElement.parentElement.children[1].contentEditable = true
           arr[0].target.parentElement.parentElement.children[2].contentEditable = true
           arr[0].target.parentElement.parentElement.children[0].focus()
-          arr[0].target.textContent = "Save"
+          arr[0].target.textContent = "Update"
       }
       else
       {
@@ -46,6 +51,19 @@ export class TableComponent implements OnInit {
           let itemIndex = this.groceryItems.indexOf(arr[1])
           this.groceryItems[itemIndex].unit = arr[0].target.parentElement.parentElement.children[1].textContent
           this.groceryItems[itemIndex].unitRate = arr[0].target.parentElement.parentElement.children[2].textContent
+          const data = JSON.parse(localStorage.getItem(`${arr[1].id}`))
+          //console.log(data)
+          let obj = {
+              id : arr[1].id,
+              grocery : arr[0].target.parentElement.parentElement.children[0].textContent,
+              unit : arr[0].target.parentElement.parentElement.children[1].textContent,
+              unitRate :  arr[0].target.parentElement.parentElement.children[2].textContent,
+              total : arr[0].target.parentElement.parentElement.children[1].textContent*arr[0].target.parentElement.parentElement.children[2].textContent
+          }
+          if(data.id === arr[1].id)
+          {
+              localStorage.setItem(`${arr[1].id}`,JSON.stringify(obj))
+          }
           arr[0].target.textContent = "Edit"
       }
   }

@@ -10,7 +10,7 @@ import { Grocery } from '../grocery';
 })
 export class InputComponent implements OnInit {
 
-  groceryItems : any = []
+  groceryItems : Grocery[] = []
 
   constructor() { 
 
@@ -24,7 +24,7 @@ export class InputComponent implements OnInit {
   }
 
   addItem(groceryForm : NgForm){
-    if(groceryForm.value.groceryValue !== "" && groceryForm.value.unitValue !== 0 && groceryForm.value.pricePerUnitValue !== 0)
+    if(groceryForm.value.groceryValue !== "" && groceryForm.value.unitValue !== "" && groceryForm.value.pricePerUnitValue !== "")
     {
         let obj = {
         id : ++this.count,

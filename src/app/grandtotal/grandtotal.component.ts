@@ -8,7 +8,7 @@ import { Grocery } from '../grocery';
 })
 export class GrandtotalComponent implements OnInit {
 
-  @Input() groceryItems: any = [];
+  @Input() groceryItems: any[] = [];
 
   constructor() { 
 
@@ -16,7 +16,7 @@ export class GrandtotalComponent implements OnInit {
 
   // grTotal : number ;
   //groceryItems = new Array;
-  grandTotal = 0;
+  grandTotal : number ;
 
   ngOnInit(): void {
     //this.grandTotalCalculate()
@@ -38,11 +38,6 @@ export class GrandtotalComponent implements OnInit {
 
     return this.grandTotal
   }
-
-
-  // grandTotalCalculate(){
-  //   this.grTotal = this.gTotal.getGrandTotal()
-  // }
 
   // ngOnChanges(changes : SimpleChange) {
   //   if(changes.previousValue === this.grandTotal)

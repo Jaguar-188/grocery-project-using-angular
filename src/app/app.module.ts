@@ -1,4 +1,3 @@
-import { GroceryItemsService } from './services/grocery-items.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -25,7 +24,7 @@ import { GrandtotalComponent } from './grandtotal/grandtotal.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [GroceryItemsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

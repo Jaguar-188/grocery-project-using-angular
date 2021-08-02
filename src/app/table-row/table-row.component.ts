@@ -26,26 +26,6 @@ export class TableRowComponent implements OnInit {
   deleteItem(obj:object){
 
     this.delete.emit(obj)
-
-    //console.log(this.groceryItems)
-    // const data = JSON.parse(localStorage.getItem(`${id}`))
-    // if(data.id === id)
-    // {
-    //     localStorage.removeItem(`${id}`)
-    // }
-    // this.groceryItems = this.groceryItems.filter(item => item.id !== id)
-    // //console.log(this.groceryItems)
-    // this.grandTotal = 0
-    // for(let item of this.groceryItems)
-    // {
-    //     this.grandTotal += item.unit*item.unitRate
-    // }
-    // console.log(this.grandTotal)
-    // this.grTotal = this.grandTotal
-    // //console.log("1"+this.grTotal)
-    // //console.log(this.grTotal)
-    // this.gTotal.setGrandTotal(this.grTotal)
-    
   }
 
   editItem(event:any,item:object){
