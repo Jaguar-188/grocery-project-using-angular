@@ -24,27 +24,16 @@ export class InputComponent implements OnInit {
   ngOnInit(): void {
     if(localStorage.length > 0)
     {
-      //console.log("Hi")
-      for(let i=1;i<=localStorage.length;i++)
+      for(var i = 0; i < localStorage.length; i++)
       {
-        
-        const data = localStorage.getItem(`${i}`)
-        if(data === null || data === undefined)
-        {
-            continue
-        }
-        else
-        {
-            this.groceryItems.push(JSON.parse(data))
-        }
-        
+          const data = localStorage.getItem(localStorage.key(i))
+          const item = JSON.parse(data)
+          this.groceryItems.push(item)
       }
-          
+      //const item = JSON.parse(localStorage.getItem(localStorage.key(localStorage.length)))
+      //this.count = 1 + parseInt(item.id)
+      //console.log(localStorage.length)
     }
-    const item = JSON.parse(localStorage.getItem(`${localStorage.length}`))
-    this.count = item.id
-    
-
   }
 
   addItem(groceryForm : NgForm){
