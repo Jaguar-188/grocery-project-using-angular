@@ -1,8 +1,8 @@
 <div class="adding center">
     <form action="" method="" #groceryForm = "ngForm" (ngSubmit) = "addItem(groceryForm)">
-        <input type="text" name="groceryValue" placeholder="Product Name" ngModel>
-        <input type="text" name="unitValue" placeholder="Units" ngModel>
-        <input type="text" name="pricePerUnitValue" placeholder="Price per unit" ngModel><br><br>
+        <input type="text" #groceryValue id="groceryValue" name="groceryValue" placeholder="Product Name" ngModel>
+        <input type="text" id="unitValue" name="unitValue" placeholder="Units" ngModel>
+        <input type="text" id="pricePerUnitValue" name="pricePerUnitValue" placeholder="Price per unit" ngModel><br><br>
         <input type="submit" name="btn" class="btn" value="Add Item">
     </form>
 </div>

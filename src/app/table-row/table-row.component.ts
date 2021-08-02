@@ -14,24 +14,26 @@ export class TableRowComponent implements OnInit {
   constructor() { 
 
   }
-
+  arr = [];
   // groceryItems = new Array;
   // grTotal : number;
   
   ngOnInit(): void {
     //this.groceryItems = this.groceries.getData()
     
+    
   }
 
   deleteItem(obj:object){
-
     this.delete.emit(obj)
   }
 
-  editItem(event:any,item:object){
-    let arr = [event,item]
-    this.edit.emit(arr)
+  editItem(event:any,obj:object){
+    this.arr = [event,obj]
+    this.edit.emit(this.arr)
     //console.log(event.target.textContent)
   }
+
+
 
 }
