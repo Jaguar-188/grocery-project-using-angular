@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
 
+## Screenshot
+
+![N|Solid](https://github.com/Jaguar-188/grocery-project-using-angular/blob/main/src/assets/Screenshot%20from%202021-08-03%2011-16-57.png#)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
